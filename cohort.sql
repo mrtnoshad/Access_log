@@ -5,7 +5,6 @@ select
       om.med_description as tpaDescription, min(om.order_time_jittered) as tpaOrderTime,
       min(mar.taken_time_jittered) as tpaAdminTime,
       inpatient.pat_class as inptClass, min(inpatient.effective_time_jittered) as inpatientAdmitTime
-    into #cohort
     from
       starr_datalake2018.order_proc as op, 
       starr_datalake2018.adt as admit, 
