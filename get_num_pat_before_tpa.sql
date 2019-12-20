@@ -1,3 +1,5 @@
+
+CREATE OR REPLACE TABLE noshad_test.num_pat AS(
 WITH
 
     -- Generate ADT_cohort with actual times
@@ -39,9 +41,5 @@ WITH
 SELECT jc_uid, pat_enc_csn_id_coded, max(num_tranx_rate) as max_norm_num_tranx
 FROM NUM_PAT_PER_DEP
 WHERE time_in < tpaAdminTime
-GROUP BY jc_uid, pat_enc_csn_id_coded;
-  
-
-
-
-
+GROUP BY jc_uid, pat_enc_csn_id_coded
+)
