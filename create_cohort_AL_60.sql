@@ -1,4 +1,4 @@
-CREATE TABLE `noshad.cohort_AL_60` AS
+CREATE OR REPLACE TABLE `noshad.cohort_AL_60` AS
 (
 -- generate cohort AL
 With AL as
@@ -46,7 +46,7 @@ where datetime_diff(al.access_time_jittered, cohort.tpaAdminTime, MINUTE) >= -60
 
 -- add user info role to access log from user map 
 select AL.* , MP.unique_role as user_role 
-  from noshad.cohort_AL as AL
+  from AL
   left join noshad.user_map as MP
   on MP.prov_map_id=AL.user_deid
 )
