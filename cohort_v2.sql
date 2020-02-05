@@ -28,7 +28,7 @@ select
       and ((om.med_description like '%ALTEPLASE%' AND om.med_description like '%FOR STROKE%') 
       OR om.med_description like '%ALTEPLASE 100%')--'%ALTEPLASE 100%')
       and inpatient.pat_class_c = '126' -- Inpatient
-      and datetime_diff(om.order_time_jittered, admit.effective_time_jittered, MINUTE) <= 360  -- within 6 hours
+      and datetime_diff(om.order_time_jittered, admit.effective_time_jittered, MINUTE) <= 270  -- within 4.5 hours
     group by 
       op.jc_uid, op.pat_enc_csn_id_coded, 
       admit.event_type, admit.pat_class, admit.effective_time_jittered, 
@@ -36,3 +36,7 @@ select
       inpatient.pat_class
     order by emergencyAdmitTime
     
+
+
+
+
