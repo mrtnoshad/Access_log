@@ -1,4 +1,4 @@
-drop table if exists noshad_test.cohort_AL_adt;
+drop table if exists noshad.cohort_AL_adt;
 create table noshad.cohort_AL_adt as
 
 (select 
