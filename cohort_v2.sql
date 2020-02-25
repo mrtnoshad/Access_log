@@ -1,11 +1,12 @@
-
-select 
+CREATE OR REPLACE TABLE noshad.cohort_v2 as (
+Select *, DATETIME_DIFF(tpaAdminTime,emergencyAdmitTime, MINUTE) as t2tpa FROM
+(select 
       op.jc_uid, op.pat_enc_csn_id_coded,
       admit.event_type, admit.pat_class, admit.effective_time_jittered as emergencyAdmitTime, 
       min(opCT.order_inst_jittered) as ctHeadOrderTime,
       om.med_description as tpaDescription, min(om.order_time_jittered) as tpaOrderTime,
       min(mar.taken_time_jittered) as tpaAdminTime,
-      inpatient.pat_class as inptClass, min(inpatient.effective_time_jittered) as inpatientAdmitTime
+      inpatient.pat_class as inptClass, min(inpatient.effective_time_jittered) as inpatientAdmitTime,
     from
       starr_datalake2018.order_proc as op, 
       starr_datalake2018.adt as admit, 
@@ -35,8 +36,6 @@ select
       om.med_description,
       inpatient.pat_class
     order by emergencyAdmitTime
-    
+)
 
-
-
-
+)
