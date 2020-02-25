@@ -4,7 +4,8 @@ Select *, DATETIME_DIFF(tpaAdminTime,emergencyAdmitTime, MINUTE) as t2tpa FROM
       op.jc_uid, op.pat_enc_csn_id_coded,
       admit.event_type, admit.pat_class, admit.effective_time_jittered as emergencyAdmitTime, 
       min(opCT.order_inst_jittered) as ctHeadOrderTime,
-      om.med_description as tpaDescription, min(om.order_time_jittered) as tpaOrderTime,
+      --om.med_description as tpaDescription, 
+      min(om.order_time_jittered) as tpaOrderTime,
       min(mar.taken_time_jittered) as tpaAdminTime,
       inpatient.pat_class as inptClass, min(inpatient.effective_time_jittered) as inpatientAdmitTime,
     from
@@ -33,7 +34,7 @@ Select *, DATETIME_DIFF(tpaAdminTime,emergencyAdmitTime, MINUTE) as t2tpa FROM
     group by 
       op.jc_uid, op.pat_enc_csn_id_coded, 
       admit.event_type, admit.pat_class, admit.effective_time_jittered, 
-      om.med_description,
+      --om.med_description,
       inpatient.pat_class
     order by emergencyAdmitTime
 )
