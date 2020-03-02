@@ -24,4 +24,5 @@ Access_log data, Moore Project
 
 ### Event time Analysis
 * Run clinical_event_times.sql to generate the table of cohort event times.
+* Run clinical_time2event.sql to generate time-to-important events
 * Run the jupyter notebook event_and_action_analysis.Ipynp
