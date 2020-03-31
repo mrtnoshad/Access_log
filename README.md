@@ -10,7 +10,7 @@ Access_log data, Moore Project
 * Run adt_summary.sql to create a table of summarized arrival/discharge/transfer information
 * Generate shc_access_log_de_dep_id which is the same as sch_access_log, but also includes the department_id information joined
 * Run the Jupiter notebook department_busyness.ipynp
-* Run the Jupiter notebook prov_busyness.ipynp
+* Run the Jupiter notebook provider_busyness.ipynp
 
 *Plot the results:*
 * Download the features
