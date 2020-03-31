@@ -14,7 +14,7 @@ Access_log data, Moore Project
 
 *Plot the results:*
 * Download the features
-* Run Jupiter notebook busyness_results.ipynp
+* Run Jupiter notebook busyness_Plots.ipynp
 
 ### Team Experience (Individual and Shared):
 * Create the cohort table (run cohort_v2.sql) if haven’t created before
