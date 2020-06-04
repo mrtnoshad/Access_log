@@ -22,8 +22,8 @@ UNION ALL
 
 ( SELECT OP0.jc_uid as jc_uid, 
   OP0.pat_enc_csn_id_coded as enc_id, 
-  'OP' as event_type,
-  CAST(OP0.proc_id AS STRING) as event_id,
+  'OP-' || SUBSTR(OP0.proc_code, 1,3) as event_type,
+  OP0.proc_code as event_id,
   OP0.description as event_name,
   OP0.ordering_date_jittered as event_time,
   cohort.emergencyAdmitTime as emergencyAdmitTime,
