@@ -5,7 +5,7 @@ FROM
 (
 SELECT OM0.jc_uid as jc_uid, 
   OM0.pat_enc_csn_id_coded as enc_id, 
-  'OM' || SUBSTR(OM0.med_description, 1,3) as event_type,
+  'OM-' || SUBSTR(OM0.med_description, 1,3) as event_type,
   CAST(OM0.order_med_id_coded AS STRING) as event_id,
   OM0.med_description as event_name,
   OM0.order_time_jittered as event_time,
@@ -25,7 +25,7 @@ UNION ALL
   'OP-' || SUBSTR(OP0.proc_code, 1,3) as event_type,
   OP0.proc_code as event_id,
   OP0.description as event_name,
-  OP0.ordering_date_jittered as event_time,
+  OP0.order_time_jittered as event_time,
   cohort.emergencyAdmitTime as emergencyAdmitTime,
   Cohort.tpaAdminTime as tpaAdminTime
   
