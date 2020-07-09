@@ -1,4 +1,4 @@
-CREATE OR REPLACE TABLE noshad.aim2_event_list_v4_AL as
+CREATE OR REPLACE TABLE noshad.aim2_event_list_all_v2 as
 SELECT 
 
 jc_uid, 
