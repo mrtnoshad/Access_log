@@ -14,7 +14,7 @@ FROM `som-nero-phi-jonc101.noshad.aim2_event_list_all_v1`
 WHERE event_type like 'Order Med%'
 GROUP BY event_type
 ORDER BY num DESC
-LIMIT 10
+LIMIT 20
 )
 
 UNION ALL
@@ -24,7 +24,7 @@ FROM `som-nero-phi-jonc101.noshad.aim2_event_list_all_v1`
 WHERE event_type like 'Order Procedure%'
 GROUP BY event_type
 ORDER BY num DESC
-LIMIT 20
+LIMIT 40
 )
 
 UNION ALL
@@ -44,7 +44,7 @@ FROM `som-nero-phi-jonc101.noshad.aim2_event_list_all_v1`
 WHERE event_type like 'Lab Result%'
 GROUP BY event_type
 ORDER BY num DESC
-LIMIT 10
+LIMIT 20
 )
 
 
@@ -56,7 +56,7 @@ FROM `som-nero-phi-jonc101.noshad.aim2_event_list_all_v1`
 WHERE event_type like 'Access log%'
 GROUP BY event_type
 ORDER BY num DESC
-LIMIT 50
+LIMIT 100
 )
 
 
