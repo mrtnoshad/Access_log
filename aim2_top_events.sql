@@ -1,3 +1,5 @@
+CREATE OR REPLACE TABLE noshad.aim2_top_events AS
+(
 
 (SELECT event_type, count(*) as num 
 FROM `som-nero-phi-jonc101.noshad.aim2_event_list_all_v1` 
@@ -59,4 +61,4 @@ ORDER BY num DESC
 LIMIT 100
 )
 
-
+)
