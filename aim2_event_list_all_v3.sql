@@ -139,7 +139,7 @@ UNION ALL
 (
 SELECT LR0.rit_uid as jc_uid, 
   LR0.pat_enc_csn_id_coded as enc_id, 
-  'Lab Result - ' || LR0.proc_code as event_type,
+  'Lab Collection - ' || LR0.proc_code as event_type,
   LR0.proc_code as event_id,
   LR0.proc_code as event_name,  --lab_name
   LR0.taken_time_jittered as event_time,
