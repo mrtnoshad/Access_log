@@ -1,9 +1,8 @@
-drop table if exists noshad_test.user_map_1;
-create table noshad_test.user_map_1 as
+CREATE OR REPLACE TABLE noshad.prov_id_map_2 AS
 (
 with
   T1 as -- find the counts of each role
-  (select prov_map_id, name as user_role, count(*) as count_of_role
+  (select prov_map_id, name as user_role, (CASE name WHEN NULL THEN 0 ELSE count(*) END ) AS count_of_role
     from starr_datalake2018.treatment_team 
     group by prov_map_id, user_role
     order by prov_map_id, count_of_role Desc),
